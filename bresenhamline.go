@@ -1,3 +1,4 @@
+// Package bresenhamline provides simple line methods based on Bresenham's Line Algorithm.
 package bresenhamline
 
 import (
@@ -5,6 +6,7 @@ import (
 	"math"
 )
 
+// Line takes 2 image.Point (start & end) and a callback function given line points.
 func Line(a, b image.Point, point func(image.Point)) {
 	steep := math.Abs(float64(b.Y-a.Y)) > math.Abs(float64(b.X-a.X))
 	if steep {
@@ -46,6 +48,7 @@ func Line(a, b image.Point, point func(image.Point)) {
 	}
 }
 
+// LinePoints returns points of line, inclusive start and end points.
 func LinePoints(a, b image.Point) []image.Point {
 	linePoints := []image.Point{}
 	Line(a, b, func(p image.Point) {
