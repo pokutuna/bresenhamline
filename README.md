@@ -9,6 +9,8 @@ Package bresenhamline provides simple line methods based on Bresenham's Line Alg
 
 # Example
 
+## code
+
 ```go
 package main
 
@@ -25,12 +27,16 @@ func main() {
 	var palette color.Palette = []color.Color{color.White, color.Black}
 	img := image.NewPaletted(image.Rect(0, 0, 100, 100), palette)
 
+	// Line: calls function giving each points
 	bresenhamline.Line(image.Pt(50, 10), image.Pt(10, 90), func(p image.Point) {
 		img.Set(p.X, p.Y, palette[1])
 	})
-	bresenhamline.Line(image.Pt(50, 10), image.Pt(90, 90), func(p image.Point) {
+
+	// LinePoints: returns []image.Point
+	secondLine := bresenhamline.LinePoints(image.Pt(50, 10), image.Pt(90, 90))
+	for _, p := range secondLine {
 		img.Set(p.X, p.Y, palette[1])
-	})
+	}
 
 	out, _ := os.Create("out.png")
 	defer out.Close()
@@ -38,5 +44,7 @@ func main() {
 	out.Sync()
 }
 ```
+
+## output
 
 ![example output](https://raw.githubusercontent.com/wiki/pokutuna/bresenhamline/images/out.png)
