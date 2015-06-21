@@ -8,7 +8,7 @@ import (
 
 func TestLine(t *testing.T) {
 	start, end := image.Pt(1, 1), image.Pt(11, 5)
-	linePoints := make([]image.Point, 0)
+	var linePoints []image.Point
 	Line(start, end, func(p image.Point) {
 		linePoints = append(linePoints, p)
 	})
