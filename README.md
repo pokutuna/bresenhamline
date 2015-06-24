@@ -3,6 +3,7 @@ bresenhamline
 
 [![Build Status on Travis-CI](https://travis-ci.org/pokutuna/bresenhamline.svg?branch=master)](https://travis-ci.org/pokutuna/bresenhamline)
 [![Documentation on godoc.org](https://godoc.org/github.com/pokutuna/bresenhamline?status.svg)](https://godoc.org/github.com/pokutuna/bresenhamline)
+[![Coverage on gocover.io](http://gocover.io/_badge/github.com/pokutuna/bresenhamline)](http://gocover.io/github.com/pokutuna/bresenhamline)
 
 Package bresenhamline provides simple line methods based on Bresenham's Line Algorithm.
 
